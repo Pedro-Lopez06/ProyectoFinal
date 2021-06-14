@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//hola diosito
 package vista;
 
 import interfaces.Colores;
@@ -23,7 +24,7 @@ public class VistaCliente extends JDialog implements Colores,Fuentes{
     
     ImageIcon Search = new 
     ImageIcon(getClass().getResource("/imagenes/busqueda.png"));
-
+    int hola;
     //Etiquetas
     public JLabel LblTitulo = new JLabel("ABC de Cliente");
     public JLabel LblCodigo = new JLabel("Codigo: ");
