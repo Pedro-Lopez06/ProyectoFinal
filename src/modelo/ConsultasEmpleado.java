@@ -23,7 +23,7 @@ public class ConsultasEmpleado extends Conexion{
         try {
             PreparedStatement Ps;
             String SQL =
-            "insert into empleado (Codigo, Nombre,Direccion,Entrada,Salida,Telefono,Sueldo) values (?,?,?,?,?,?,?)";
+            "insert into empleado (Codigo,Nombre,Direccion,Entrada,Salida,Telefono,Sueldo) values (?,?,?,?,?,?,?)";
             Ps = con.prepareCall(SQL);//Preparara llamada a la consulta
             Ps.setInt(1,Modelo.getCodigo()); //interrogante 1
             Ps.setString(2,Modelo.getNombre());
@@ -32,7 +32,7 @@ public class ConsultasEmpleado extends Conexion{
             Ps.setString(5, Modelo.getSalida());
             Ps.setString(6, Modelo.getTelefono());
             Ps.setFloat(7, Modelo.getSueldo());
-            
+            Ps.executeUpdate();
             return true;
             
         } catch (SQLException e) {
