@@ -9,9 +9,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-
+/**
+ *
+ * @author Emmanuel Ruiz
+ */
 public class VistaBusquedaPorDescripcion extends JDialog{
-    JLabel LblNombre = new JLabel("Proovedor a Buscar");
+    JLabel LblNombre = new JLabel("Cliente a Buscar");
     public JTextField TxtNombre = new JTextField();
     public JButton BtnAceptar = new JButton("Aceptar");
     
@@ -19,12 +22,12 @@ public class VistaBusquedaPorDescripcion extends JDialog{
     public JTable Tabla = new JTable();
     //para que aparezca la barra de desplazamiento vertical
     JScrollPane ScrollTable = new JScrollPane(Tabla);
-    
-    public VistaBusquedaPorDescripcion(Frame owner, boolean modal){
-    super(owner, modal);
-    configuracionInicial();
-    agregarComponentes();
-}
+
+    public VistaBusquedaPorDescripcion(Frame owner, boolean modal) {
+        super(owner, modal);
+        configuracionInicial();
+        agregarComponentes();
+    }
 
     private void configuracionInicial() {
         this.setSize(430, 320);
@@ -45,4 +48,5 @@ public class VistaBusquedaPorDescripcion extends JDialog{
         this.add(ScrollTable);
         this.add(BtnAceptar);
     }
+    
 }

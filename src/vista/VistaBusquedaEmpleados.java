@@ -15,6 +15,6 @@ import javax.swing.JTextField;
  */
 public class VistaBusquedaEmpleados extends JDialog{
     JLabel LblNombre = new JLabel("Empleado a buscar");
-    public JTextField TxtNombre = new
+    public JTextField TxtNombre = new JTextField();
     
 }

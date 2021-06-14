@@ -1,6 +1,7 @@
 
 package controlador;
 
+import java.awt.Cursor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
@@ -11,66 +12,69 @@ import modelo.ModeloTablaCliente;
 import vista.VistaBusquedaPorDescripcion;
 import vista.VistaCliente;
 
+
 /**
  *
  * @author Emmanuel Ruiz
  */
 public class ControladorVistaCliente implements MouseListener{
-    public ModeloCliente ModeloCliente;
-    public VistaCliente VistaCliente;
-
-    private ConsultasCliente Consutascliente = new ConsultasCliente();
+    ModeloCliente ModeloCliente;
+    VistaCliente VistaCliente;
     
-    public ControladorVistaCliente(ModeloCliente ModeloCliente, VistaCliente vistaCliente) {
-        this.ModeloCliente = ModeloCliente;
-        this.VistaCliente = vistaCliente;
-        vistaCliente.setVisible(true);//hacerlo visible
-        
-        oyentes();
-    }
+    private ConsultasCliente consultasCliente = new ConsultasCliente();
 
-    private void oyentes() {
-        VistaCliente.BtnGuardar.addMouseListener(this);
-        VistaCliente.BtnActualizar.addMouseListener(this);
-        VistaCliente.BtnEliminar.addMouseListener(this);
-        VistaCliente.BtnBuscar.addMouseListener(this);
-        VistaCliente.BtnSalir.addMouseListener(this);
+    public ControladorVistaCliente(ModeloCliente ModeloCliente, VistaCliente VistaCliente) {
+        this.ModeloCliente = ModeloCliente;
+        this.VistaCliente = VistaCliente;
+        oyentesVista();
+        this.VistaCliente.setVisible(true);
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-        if (e.getSource()==VistaCliente.BtnGuardar) {
-            guarda();
-        }else if (e.getSource()==VistaCliente.BtnActualizar) {
+    public void mouseClicked(MouseEvent me) {
+        if(me.getSource()==VistaCliente.BtnGuardar){
+            guardar();
+        }else if(me.getSource()==VistaCliente.BtnActualizar){
             modificar();
-        }else if (e.getSource()==VistaCliente.BtnEliminar) {
+        }else if(me.getSource()==VistaCliente.BtnEliminar){
             eliminar();
-        }else if (e.getSource()==VistaCliente.BtnBuscar) {
+        }else if(me.getSource()==VistaCliente.BtnBuscar){
             buscar();
-        }else if (e.getSource()==VistaCliente.BtnSalir) {
-            salir();
-        }else if(e.getSource()==VistaCliente.LblSearch){
+        }else if(me.getSource()==VistaCliente.BtnSalir){
+            salir(); 
+        }else if(me.getSource()==VistaCliente.LblSearch){
             busquedaMVC();
         }
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent me) {
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public void mouseReleased(MouseEvent me) {
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(MouseEvent me) {
+        if(me.getSource()==VistaCliente.LblSearch){
+            VistaCliente.LblSearch.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        }
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent me) {
     }
 
-    private void llenarModeloConVista(){
+    private void oyentesVista() {
+        VistaCliente.BtnActualizar.addMouseListener(this);
+        VistaCliente.BtnBuscar.addMouseListener(this);
+        VistaCliente.BtnEliminar.addMouseListener(this);
+        VistaCliente.BtnGuardar.addMouseListener(this);
+        VistaCliente.BtnSalir.addMouseListener(this);
+        VistaCliente.LblSearch.addMouseListener(this);
+    }
+        private void llenarModeloConVista() {
         ModeloCliente.setCodigo(Integer.parseInt(VistaCliente.TxtCodigo.getText()));
         ModeloCliente.setNombre(VistaCliente.TxtNombre.getText());
         ModeloCliente.setDireccion(VistaCliente.TxtDireccion.getText());
@@ -79,18 +83,19 @@ public class ControladorVistaCliente implements MouseListener{
         ModeloCliente.setCorreo(VistaCliente.TxtCorreo.getText());
         ModeloCliente.setFechaIngreso(VistaCliente.TxtFechaIngreso.getText());
         ModeloCliente.setTelefono(VistaCliente.TxtTelefono.getText());
-    }
-    private void llenarVistaConModelo() {
+        
+     }
+    private void llenarVistaConModelo(){
         VistaCliente.TxtCodigo.setText(ModeloCliente.getCodigo()+"");
-        VistaCliente.TxtNombre.setText(ModeloCliente.getNombre());
-        VistaCliente.TxtDireccion.setText(ModeloCliente.getDireccion());
-        VistaCliente.TxtCiudad.setText(ModeloCliente.getCiudad());
-        VistaCliente.TxtEdad.setText(ModeloCliente.getEdad());
-        VistaCliente.TxtCorreo.setText(ModeloCliente.getCorreo());
-        VistaCliente.TxtFechaIngreso.setText(ModeloCliente.getFechaIngreso());
-        VistaCliente.TxtTelefono.setText(ModeloCliente.getTelefono()); 
+        VistaCliente.TxtNombre.setText(ModeloCliente.getNombre()+"");
+        VistaCliente.TxtDireccion.setText(ModeloCliente.getDireccion()+"");
+        VistaCliente.TxtCiudad.setText(ModeloCliente.getCiudad()+"");
+        VistaCliente.TxtEdad.setText(ModeloCliente.getEdad()+"");
+        VistaCliente.TxtCorreo.setText(ModeloCliente.getCorreo()+"");
+        VistaCliente.TxtFechaIngreso.setText(ModeloCliente.getFechaIngreso()+"");
+        VistaCliente.TxtTelefono.setText(ModeloCliente.getTelefono()+"");
     }
-    private void limpiarCampos() {
+    private void limpiarCampos(){
         VistaCliente.TxtCodigo.setText("");
         VistaCliente.TxtNombre.setText("");
         VistaCliente.TxtDireccion.setText("");
@@ -99,39 +104,43 @@ public class ControladorVistaCliente implements MouseListener{
         VistaCliente.TxtCorreo.setText("");
         VistaCliente.TxtFechaIngreso.setText("");
         VistaCliente.TxtTelefono.setText("");
+        
     }
-    private boolean validarCampoCodigo() {
-        if (VistaCliente.TxtCodigo.getText().isEmpty()) 
-           return false;
-        else
-            return true;
-    }
-    private boolean validarTodosLosCampos() {
-        if (VistaCliente.TxtCodigo.getText().isEmpty()||
-            VistaCliente.TxtNombre.getText().isEmpty()|| 
-            VistaCliente.TxtDireccion.getText().isEmpty()|| 
-            VistaCliente.TxtCiudad.getText().isEmpty()||
-            VistaCliente.TxtEdad.getText().isEmpty()||
-            VistaCliente.TxtCorreo.getText().isEmpty()||
-            VistaCliente.TxtFechaIngreso.getText().isEmpty()||
-            VistaCliente.TxtTelefono.getText().isEmpty())
+    //valida que no este vacio el campo codigo
+    private boolean validarCampoCodigo(){
+        if(VistaCliente.TxtCodigo.getText().isEmpty())
             return false;
         else
             return true;
     }
-    
-    private void guarda() {
-         if (validarTodosLosCampos()) {
+    //valida que no  esten vacios ningunos de los campos
+    private boolean validarTodosLosCampos(){
+        if(VistaCliente.TxtCodigo.getText().isEmpty()||
+           VistaCliente.TxtNombre.getText().isEmpty()||
+           VistaCliente.TxtDireccion.getText().isEmpty()||
+           VistaCliente.TxtCiudad.getText().isEmpty()||
+           VistaCliente.TxtEdad.getText().isEmpty()||
+           VistaCliente.TxtCorreo.getText().isEmpty()||
+           VistaCliente.TxtFechaIngreso.getText().isEmpty()||
+           VistaCliente.TxtTelefono.getText().isEmpty())
+            return false;
+        else 
+            return true;
+    }
+
+    private void guardar() {
+        if (validarTodosLosCampos()) {
             ModeloCliente.setCodigo(Integer.parseInt(VistaCliente.TxtCodigo.getText()));
-            if (Consutascliente.buscar(ModeloCliente)==true) {
-                JOptionPane.showMessageDialog(VistaCliente,"Ese Cliente ya existe");
+            if (consultasCliente.buscar(ModeloCliente)==true) {
+                JOptionPane.showMessageDialog(VistaCliente,"Ese proveedor ya existe");
             }else{
                 llenarModeloConVista();
-                if (Consutascliente.insertar(ModeloCliente)==true) {
+                if (consultasCliente.insertar(ModeloCliente)==true) {
                     JOptionPane.showMessageDialog(null,"Registro guardado correctamente");
                     limpiarCampos();
                 }else{
-                    JOptionPane.showMessageDialog(null,"El campo codigo no debe estar vacio");   
+                    JOptionPane.showMessageDialog(null,"El campo codigo no debe estar vacio");
+                    
                 }
             }
             
@@ -148,10 +157,10 @@ public class ControladorVistaCliente implements MouseListener{
             ModeloCliente ModeloTemporal = new ModeloCliente();
             ModeloTemporal.setCodigo(Integer.parseInt(VistaCliente.TxtCodigo.getText()));
             
-            if (Consutascliente.buscar(ModeloTemporal)==false) {
-                JOptionPane.showMessageDialog(VistaCliente,"Ese Cliente no existe");
+            if (consultasCliente.buscar(ModeloTemporal)==false) {
+                JOptionPane.showMessageDialog(VistaCliente,"Ese producto no existe");
             }else{
-                if (Consutascliente.modificar(ModeloCliente)) {
+                if (consultasCliente.modificar(ModeloCliente)) {
                    JOptionPane.showMessageDialog(VistaCliente,"Registro modificado correctamente");
                    limpiarCampos();
                }else{
@@ -168,10 +177,10 @@ public class ControladorVistaCliente implements MouseListener{
     private void eliminar() {
         if (validarCampoCodigo()) {
             ModeloCliente.setCodigo(Integer.parseInt(VistaCliente.TxtCodigo.getText()));
-            if (Consutascliente.buscar(ModeloCliente)==false) {
-               JOptionPane.showMessageDialog(VistaCliente,"Ese Cliente no existe");
+            if (consultasCliente.buscar(ModeloCliente)==false) {
+               JOptionPane.showMessageDialog(VistaCliente,"Ese proveedor no existe");
             }else{
-                if (Consutascliente.eliminar(ModeloCliente)) {
+                if (consultasCliente.eliminar(ModeloCliente)) {
                     JOptionPane.showMessageDialog(VistaCliente,"Registro eliminado correctamente");
                    limpiarCampos();
                 }else{
@@ -184,9 +193,9 @@ public class ControladorVistaCliente implements MouseListener{
     }
 
     private void buscar() {
-         if (validarCampoCodigo()) {
+        if (validarCampoCodigo()) {
             ModeloCliente.setCodigo(Integer.parseInt(VistaCliente.TxtCodigo.getText()));
-            if (Consutascliente.buscar(ModeloCliente)==true) {
+            if (consultasCliente.buscar(ModeloCliente)==true) {
                 llenarVistaConModelo();
             }else{
                 JOptionPane.showMessageDialog(VistaCliente,"registro no existe");
@@ -198,25 +207,21 @@ public class ControladorVistaCliente implements MouseListener{
 
     private void salir() {
         int opc = JOptionPane.showConfirmDialog(VistaCliente,"¿Deseas salir de productos?","ALERTA!",0,1);
-        if (opc == 0)VistaCliente.dispose(); {
-            
-        }
+        if (opc == 0)VistaCliente.dispose(); 
     }
-    /*public static void main(String[] args){
-        VistaCliente v = new VistaCliente(null, false);
-        ModeloCliente m = new ModeloCliente();
-        ControladorVistaCliente p = new ControladorVistaCliente(m,v);
-    }*/
-
-    private void busquedaMVC() {
+    private void busquedaMVC(){
         ModeloTablaCliente ModeloTablaCliente = new ModeloTablaCliente();
         
         VistaBusquedaPorDescripcion VistaBusquedaPorDescripcion = new VistaBusquedaPorDescripcion(new JFrame(), true);
         
         //controlador
-       ContoladorBusquedaPorDescripcion ContoladorBusquedaPorDescripcion = new ContoladorBusquedaPorDescripcion(ModeloTablaCliente, ModeloCliente, VistaBusquedaPorDescripcion);
-        
+        ContoladorBusquedaPorDescripcion ControladorSearch = new ContoladorBusquedaPorDescripcion(ModeloTablaCliente, ModeloCliente, VistaBusquedaPorDescripcion);
         llenarVistaConModelo();
     }
-    
+    //public static void main(String[] args) {
+        //VistaProveedor v = new VistaProveedor(null, false);
+        //ModeloProveedor m = new ModeloProveedor();
+        //ControladorVistaProveedor p = new ControladorVistaProveedor(m, v);
+    //}
+
 }
