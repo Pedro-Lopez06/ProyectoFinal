@@ -87,11 +87,13 @@ public class VistaEmpleado extends JDialog implements Colores,Fuentes{
         this.add(TxtTelefono);
         TxtTelefono.setBounds(350,250,250,25);
         this.add(TxtEntrada);
-        TxtEntrada.setBounds(350,300,250,25);
+        TxtEntrada.setBounds(350,250,250,25);
         this.add(TxtSalida);
-        TxtSalida.setBounds(350,350,250,25);
+        TxtSalida.setBounds(350,300,250,25);
         this.add(TxtTelefono);
-        TxtTelefono.setBounds(350,400,250,25);
+        TxtTelefono.setBounds(350,350,250,25);
+        this.add(TxtSueldo);
+        TxtSueldo.setBounds(350, 400, 250, 25);
     }
 
     private void etiquetas() {
@@ -111,7 +113,7 @@ public class VistaEmpleado extends JDialog implements Colores,Fuentes{
         this.add(LblCodigo);
         LblNombre.setBounds(250,150,80,20);
         this.add(LblNombre);
-        TxtDireccion.setBounds(250,200,80,20);
+        LblDireccion.setBounds(250,200,80,20);
         this.add(LblDireccion);
         LblEntrada.setBounds(250,250,80,20);
         this.add(LblEntrada);

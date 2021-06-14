@@ -23,7 +23,7 @@ public class ConsultasEmpleado extends Conexion{
         try {
             PreparedStatement Ps;
             String SQL =
-            "insert into empleado (codigo, Nombre,Direccion,Entrada,Salida,Telefono,Sueldo) values (?,?,?,?,?,?,?)";
+            "insert into empleado (Codigo, Nombre,Direccion,Entrada,Salida,Telefono,Sueldo) values (?,?,?,?,?,?,?)";
             Ps = con.prepareCall(SQL);//Preparara llamada a la consulta
             Ps.setInt(1,Modelo.getCodigo()); //interrogante 1
             Ps.setString(2,Modelo.getNombre());
@@ -45,7 +45,7 @@ public class ConsultasEmpleado extends Conexion{
         try {
             PreparedStatement Ps;
             String SQL =
-            "update empleado set Nombre=?,Direccion=?,Entrada=?, Salida=?,Telefono=?,Sueldo=? where codigo=?";
+            "update empleado set Nombre=?,Direccion=?,Entrada=?,Salida=?,Telefono=?,Sueldo=? where Codigo=?";
             Ps = con.prepareCall(SQL);//Preparara llamada a la consulta
             Ps.setInt(7,Modelo.getCodigo()); //interrogante 1
             Ps.setString(1,Modelo.getNombre());
@@ -65,7 +65,7 @@ public class ConsultasEmpleado extends Conexion{
         try {
             PreparedStatement Ps;
             String SQL =
-            "delete from empleado where codigo=?";
+            "delete from empleado where Codigo=?";
             Ps = con.prepareCall(SQL);//Preparara llamada a la consulta
             Ps.setInt(1,Modelo.getCodigo()); //interrogante 1
             Ps.executeUpdate(); //Ejecutar la consulta SQL
@@ -79,12 +79,12 @@ public class ConsultasEmpleado extends Conexion{
         try {
             PreparedStatement Ps;
             String SQL =
-            "SELECT * FROM empleado WHERE codigo=?";
+            "SELECT * FROM empleado WHERE Codigo=?";
             Ps = con.prepareCall(SQL);//Preparara llamada a la consulta
             Ps.setInt(1,Modelo.getCodigo()); //interrogante 1
             ResultSet Rs = Ps.executeQuery();//Para obtener resultados
             if (Rs.next()) {
-                Modelo.setCodigo(Rs.getInt("codigo"));
+                Modelo.setCodigo(Rs.getInt("Codigo"));
                 Modelo.setNombre(Rs.getString("Nombre"));
                 Modelo.setDireccion(Rs.getString("Direccion"));
                 Modelo.setEntrada(Rs.getString("Entrada"));
