@@ -15,7 +15,7 @@ import javax.swing.JLabel;
  */
 public class VistaSplash extends JFrame{
     //convertir la imagen a objeto
-    ImageIcon ImSplash = new ImageIcon(getClass().getResource("/imagenes/splashh.png"));
+    ImageIcon ImSplash = new ImageIcon(getClass().getResource("/imagenes/logo1.png"));
     public JLabel LblSplash = new JLabel(ImSplash);//agrega imagen en la etiqueta
 
     public VistaSplash() {
