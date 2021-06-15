@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -97,6 +99,57 @@ public class ConsultasEmpleado extends Conexion{
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"Error SQL: buscar()\n "+e);
             return false; //Algo salió mal
+        }
+    }
+    public boolean buscarTodosLosEmpleados(DefaultTableModel Modelo){
+        try {
+            PreparedStatement Ps;
+            String SQL = "select * from empleado order by Nombre";
+            Ps = con.prepareCall(SQL);
+            ResultSet Rs = Ps.executeQuery();
+            int numeroDeCampos = Rs.getMetaData().getColumnCount();
+            while (Rs.next()) {                
+                Object Fila[] = new Object[numeroDeCampos];
+                Fila[0] = Rs.getInt("Codigo");
+                Fila[1] = Rs.getString("Nombre");
+                Fila[2] = Rs.getString("Direccion");
+                Fila[3] = Rs.getString("Entrada");
+                Fila[4] = Rs.getString("Salida");
+                Fila[5] = Rs.getString("Telefono");
+                Fila[6] = Rs.getFloat("Sueldo");
+                Modelo.addRow(Fila);
+            }
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Error SQL: buscarTodosLosProductos()\n "+e);
+            return false;
+        }
+    }
+    public void buscarFrase(JTextField TxtConsultar, DefaultTableModel ModeloTabla) throws SQLException{
+        
+        try {
+            PreparedStatement Ps;
+            String SQL = "select * from empleado where Direccion like '%" + 
+                    TxtConsultar.getText()+"'%";
+            Ps = con.prepareCall(SQL);
+            ResultSet Rs = Ps.executeQuery();
+            int numeroDeCampos = Ps.getMetaData().getColumnCount();
+            ModeloTabla.setRowCount(0);
+            while (Rs.next()) {            
+                String Fila[] = new String[numeroDeCampos];
+                Fila[0] =Rs.getInt("Codigo")+"";
+                Fila[1] = Rs.getString("Nombre");
+                Fila[2] = Rs.getString("Direccion");
+                Fila[3] = Rs.getString("Entrada");
+                Fila[4] = Rs.getString("Salida");
+                Fila[5] = Rs.getString("Telefono");
+                Fila[6] = Rs.getString("Sueldo")+"";
+                
+                ModeloTabla.addRow(Fila);
+        } 
+                         
+        }catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Error SQL: buscarFrase()\n "+e);
         }
     }
 }
