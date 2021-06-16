@@ -7,6 +7,7 @@ package vista;
 
 import interfaces.Colores;
 import interfaces.Fuentes;
+import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -64,6 +65,7 @@ public class VistaCliente extends JDialog implements Colores,Fuentes{
         this.setLayout(null);
         this.setLocationRelativeTo(null);
         this.setTitle("ABC de Cliente");
+        this.getContentPane().setBackground(new Color(46,144,232));
     }
 
     private void textFields() {
