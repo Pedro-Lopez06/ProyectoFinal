@@ -17,6 +17,7 @@ import vista.VistaCliente;
 import vista.VistaEmpleado;
 import vista.VistaPantallaPrincipal;
 import vista.VistaProveedor;
+import vista.VistaUsuarios;
 
 public class ControladorVistaPantallaPrincipal implements MouseListener{
     //variables globales
@@ -46,7 +47,9 @@ public class ControladorVistaPantallaPrincipal implements MouseListener{
             VistaProveedor VistaProveedor = new VistaProveedor(new JFrame(),true);
             ControladorVistaProveedor CVP = new ControladorVistaProveedor(ModeloProveedor, VistaProveedor);
         }else if(me.getSource()== VistaPantallaPrincipal.LblUsuario){
-            
+            ModeloUsuario ModeloUsuario = new ModeloUsuario();
+            VistaUsuarios VistaUsuarios = new VistaUsuarios(new JFrame(), true);
+            ControladorVistaUsuario CVU = new ControladorVistaUsuario(ModeloUsuario, VistaUsuarios);
             
         }else if(me.getSource()== VistaPantallaPrincipal.LblMinimizar){
             VistaPantallaPrincipal.setExtendedState(Frame.ICONIFIED);
