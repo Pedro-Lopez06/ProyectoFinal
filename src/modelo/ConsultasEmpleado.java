@@ -129,8 +129,8 @@ public class ConsultasEmpleado extends Conexion{
         
         try {
             PreparedStatement Ps;
-            String SQL = "select * from empleado where Direccion like '%" + 
-                    TxtConsultar.getText()+"'%";
+            String SQL = "select * from empleado where Nombre like '%" + 
+                    TxtConsultar.getText()+"%'";
             Ps = con.prepareCall(SQL);
             ResultSet Rs = Ps.executeQuery();
             int numeroDeCampos = Ps.getMetaData().getColumnCount();

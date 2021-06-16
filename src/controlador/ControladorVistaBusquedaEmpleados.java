@@ -120,8 +120,10 @@ public class ControladorVistaBusquedaEmpleados implements MouseListener,KeyListe
 
     @Override
     public void keyReleased(KeyEvent ke) {
-        if (ke.getSource()==VistaBusquedaEmpleados.TxtNombre) {
-            ConsultasEmpleado.buscarFrase(VistaBusquedaEmpleados.TxtNombre, ModeloBusquedaEmpleados.getModeloTabla());
-        }
+        try {
+                ConsultasEmpleado.buscarFrase(VistaBusquedaEmpleados.TxtNombre, ModeloBusquedaEmpleados.getModeloTabla());
+            }catch (Exception e){
+
+            }
     }
 }
