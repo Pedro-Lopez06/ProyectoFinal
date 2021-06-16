@@ -8,9 +8,12 @@ package controlador;
 import java.awt.Cursor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.ConsultasEmpleado;
+import modelo.ModeloBusquedaEmpleados;
 import modelo.ModeloEmpleado;
+import vista.VistaBusquedaEmpleados;
 import vista.VistaEmpleado;
 
 
@@ -46,7 +49,7 @@ public class ControladorVistaEmpleado implements MouseListener{
         }else if(me.getSource()==VistaEmpleado.BtnSalir){
             salir(); 
         }else if(me.getSource()==VistaEmpleado.LblSearch){
-            
+            busquedaMVC();
         }
     }
 
@@ -211,6 +214,16 @@ public class ControladorVistaEmpleado implements MouseListener{
     private void salir() {
         int opc = JOptionPane.showConfirmDialog(VistaEmpleado,"¿Deseas salir de Empleados?","ALERTA!",0,1);
         if (opc == 0)VistaEmpleado.dispose();
+    }
+
+    private void busquedaMVC() {
+        ModeloBusquedaEmpleados ModeloBusquedaEmpleados = new ModeloBusquedaEmpleados();
+        
+        VistaBusquedaEmpleados VistaBusquedaEmpleados = new VistaBusquedaEmpleados(new JFrame(),true);
+        
+        ControladorVistaBusquedaEmpleados ControladorSerach = new ControladorVistaBusquedaEmpleados(ModeloBusquedaEmpleados, ModeloEmpleado,VistaBusquedaEmpleados);
+        
+        llenarVistaConModelo();
     }
     
     
