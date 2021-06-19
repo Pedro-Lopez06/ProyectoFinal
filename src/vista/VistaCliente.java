@@ -132,6 +132,7 @@ public class VistaCliente extends JDialog implements Colores,Fuentes{
         this.add(LblTelefono);
         LblSearch.setBounds(180,100,80,30);
         this.add(LblSearch);
+        //
     }
     
 }

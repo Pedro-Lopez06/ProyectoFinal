@@ -14,7 +14,7 @@ import javax.swing.JTextField;
  * @author Emmanuel Ruiz
  */
 public class VistaBusquedaPorDescripcion extends JDialog{
-    JLabel LblNombre = new JLabel("Cliente a Buscar");
+    JLabel LblNombre = new JLabel("Clientes a Buscar");
     public JTextField TxtNombre = new JTextField();
     public JButton BtnAceptar = new JButton("Aceptar");
     

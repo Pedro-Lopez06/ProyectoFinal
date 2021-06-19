@@ -105,6 +105,7 @@ public class VistaEmpleado extends JDialog implements Colores,Fuentes{
           LblEntrada.setFont(FUENTE_LABELS);
           LblDireccion.setFont(FUENTE_LABELS);
           LblSalida.setFont(FUENTE_LABELS);
+          LblSueldo.setFont(FUENTE_LABELS);
           
         
         LblTitulo.setBounds(280,15,500,40);

@@ -88,6 +88,7 @@ public class VistaUsuarios extends JDialog implements Colores,Fuentes{
         LblUser.setFont(FUENTE_LABELS);
         LblNombre.setFont(FUENTE_LABELS);
         LblTipo.setFont(FUENTE_LABELS);
+        LblPassword.setFont(FUENTE_LABELS);
 
 
         LblTitulo.setBounds(280,15,500,40);
