@@ -80,7 +80,7 @@ public class ControladorVistaPantallaPrincipal implements MouseListener{
             VistaPantallaPrincipal.LblExit.setToolTipText("Salir del Sistema");
         }else if(me.getSource()==VistaPantallaPrincipal.LblCarrito){
             VistaPantallaPrincipal.LblCarrito.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            VistaPantallaPrincipal.LblCarrito.setToolTipText("Productos");
+            VistaPantallaPrincipal.LblCarrito.setToolTipText("Proveedores");
         }else if(me.getSource()==VistaPantallaPrincipal.LblUsuario){
             VistaPantallaPrincipal.LblUsuario.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             VistaPantallaPrincipal.LblUsuario.setToolTipText("Administración de Usuarios");

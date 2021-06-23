@@ -206,7 +206,7 @@ public class ControladorVistaCliente implements MouseListener{
     }
 
     private void salir() {
-        int opc = JOptionPane.showConfirmDialog(VistaCliente,"¿Deseas salir de productos?","ALERTA!",0,1);
+        int opc = JOptionPane.showConfirmDialog(VistaCliente,"¿Deseas salir de Clientes?","ALERTA!",0,1);
         if (opc == 0)VistaCliente.dispose(); 
     }
     private void busquedaMVC(){

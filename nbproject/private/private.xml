@@ -3,14 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaBusquedaPorDescripcion.java</file>
             <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/controlador/ControladorVistaEmpleado.java</file>
             <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/principal/AppZapateria.java</file>
-            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaEmpleado.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/controlador/ControladorVistaCliente.java</file>
             <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaBusquedaEmpleados.java</file>
-            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaPantallaPrincipal.java</file>
             <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/modelo/ModeloBusquedaEmpleados.java</file>
             <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/modelo/ConsultasEmpleado.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaProveedor.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaBusquedaPorDescripcion.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/controlador/ControladorVistaProveedor.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaEmpleado.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/controlador/ControladorVistaUsuario.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/controlador/ControladorVistaPantallaPrincipal.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaPantallaPrincipal.java</file>
+            <file>file:/C:/Users/Ryzen/Documents/NetBeansProjects/ZapateriaTorresGemela/ZapateriaTorresGemela/src/vista/VistaUsuarios.java</file>
         </group>
     </open-files>
 </project-private>

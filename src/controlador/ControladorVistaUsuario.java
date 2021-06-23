@@ -226,7 +226,7 @@ public class ControladorVistaUsuario implements MouseListener{
     }
 
     private void salir() {
-        int opc = JOptionPane.showConfirmDialog(VistaUsuarios,"¿Deseas salir de Empleados?","ALERTA!",0,1);
+        int opc = JOptionPane.showConfirmDialog(VistaUsuarios,"¿Deseas salir de Usuarios?","ALERTA!",0,1);
         if (opc == 0)VistaUsuarios.dispose();
     }
 

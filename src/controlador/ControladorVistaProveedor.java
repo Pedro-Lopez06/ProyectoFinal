@@ -208,7 +208,7 @@ public class ControladorVistaProveedor implements MouseListener{
     }
 
     private void salir() {
-        int opc = JOptionPane.showConfirmDialog(VistaProveedor,"¿Deseas salir de productos?","ALERTA!",0,1);
+        int opc = JOptionPane.showConfirmDialog(VistaProveedor,"¿Deseas salir de Proveedores?","ALERTA!",0,1);
         if (opc == 0)VistaProveedor.dispose(); 
     }
     private void busquedaMVC(){
