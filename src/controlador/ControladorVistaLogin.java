@@ -98,7 +98,6 @@ public class ControladorVistaLogin implements MouseListener{
                 ControladorVistaPantallaPrincipal ControladorVistaPantallaPrincipal = new ControladorVistaPantallaPrincipal(VistaPantallaPrincipal);
                 if (!(ModeloUsuario.getTipo().equals("SuperAdministrador"))) {
                     VistaPantallaPrincipal.LblUsuario.setVisible(false);
-                    VistaPantallaPrincipal.PanelArriba.setLayout(new GridLayout(1,5));
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "Usuario o Password Incorrecto");

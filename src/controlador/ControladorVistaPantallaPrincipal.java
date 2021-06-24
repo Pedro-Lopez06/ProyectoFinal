@@ -9,10 +9,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.ModeloArticulo;
 import modelo.ModeloCliente;
 import modelo.ModeloEmpleado;
 import modelo.ModeloProveedor;
 import modelo.ModeloUsuario;
+import vista.VistaArticulo;
 import vista.VistaCliente;
 import vista.VistaEmpleado;
 import vista.VistaPantallaPrincipal;
@@ -50,7 +52,6 @@ public class ControladorVistaPantallaPrincipal implements MouseListener{
             ModeloUsuario ModeloUsuario = new ModeloUsuario();
             VistaUsuarios VistaUsuarios = new VistaUsuarios(new JFrame(), true);
             ControladorVistaUsuario CVU = new ControladorVistaUsuario(ModeloUsuario, VistaUsuarios);
-            
         }else if(me.getSource()== VistaPantallaPrincipal.LblMinimizar){
             VistaPantallaPrincipal.setExtendedState(Frame.ICONIFIED);
         }else if(me.getSource()==VistaPantallaPrincipal.LblEmpleados){
@@ -61,7 +62,12 @@ public class ControladorVistaPantallaPrincipal implements MouseListener{
             ModeloCliente ModeloCliente = new ModeloCliente();
             VistaCliente VistaCliente = new VistaCliente(new JFrame(), true);
             ControladorVistaCliente CVC = new ControladorVistaCliente(ModeloCliente, VistaCliente);
+        }else if(me.getSource()==VistaPantallaPrincipal.LblArticulos){
+            ModeloArticulo ModeloArticulo = new ModeloArticulo();
+            VistaArticulo VistaArticulo = new VistaArticulo(new JFrame(), true);
+            ControladorVistaArticulo CVA = new ControladorVistaArticulo(ModeloArticulo, VistaArticulo);
         }
+        
             
     }
 

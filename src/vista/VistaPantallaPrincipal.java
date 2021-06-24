@@ -59,13 +59,12 @@ public class VistaPantallaPrincipal extends JFrame implements Colores,Fuentes{
         PanelAbajo.setBackground(PANEL_ABAJO);
         PanelCentro.setBackground(PANEL_CENTRO);
         
-        int x = 1;
-        int y =
+        
         //agregar componentes a panel arriba
         PanelArriba.setLayout(new GridLayout(1,6));
         PanelArriba.add(LblUsuario);
         PanelArriba.add(LblCarrito);
-        //PanelArriba.add(LblArticulos);
+        PanelArriba.add(LblArticulos);
         PanelArriba.add(LblClientes);
         PanelArriba.add(LblEmpleados);
         PanelArriba.add(LblMinimizar);
