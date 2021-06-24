@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controlador;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.math.BigInteger;
@@ -95,6 +96,10 @@ public class ControladorVistaLogin implements MouseListener{
             //cargar la vista y el controlador de la panatalla principal
                 VistaPantallaPrincipal VistaPantallaPrincipal = new VistaPantallaPrincipal();
                 ControladorVistaPantallaPrincipal ControladorVistaPantallaPrincipal = new ControladorVistaPantallaPrincipal(VistaPantallaPrincipal);
+                if (!(ModeloUsuario.getTipo().equals("SuperAdministrador"))) {
+                    VistaPantallaPrincipal.LblUsuario.setVisible(false);
+                    VistaPantallaPrincipal.PanelArriba.setLayout(new GridLayout(1,5));
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Usuario o Password Incorrecto");
             }
